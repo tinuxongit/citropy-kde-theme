@@ -9,13 +9,13 @@ A look for KDE Plasma 6 based on the Citropy app. It changes the interface font,
 | Part | What it does |
 | --- | --- |
 | `fonts/` | Citropy Sans, used for the interface, menus, toolbars and window titles. |
-| `icons/Citropy` | Icon theme. Redraws folders, 520 file types and 60 device icons in one smooth style. Everything else falls back to Breeze Dark. |
+| `icons/Citropy` | Icon theme. Redraws folders, 520 file types, 60 device icons, the Application Launcher category, power and search icons, and the Dolphin, System Settings and Konsole app icons. Everything else falls back to Breeze Dark. |
 | `cursors/Citropy-Cursors` | Cursor theme. The default arrow is Citropy, other pointers fall back to Breeze. |
 | `wallpapers/citropy.png` | 2560x1440 wallpaper with the Citropy mark. |
 
 File icons follow one layout. A colored page carries a symbol, and a label strip at the bottom shows the extension (ZIP, PDF, PNG, JSON). Colors group by family, for example blue for archives and documents, purple for images and video, green for spreadsheets.
 
-Toolbar and status icons, app icons and the panel launcher are not changed.
+The menu and power icons use the Citropy app's own solid style and follow the color scheme, so they stay readable on light and dark themes. Most toolbar and status icons, and third-party app icons such as Firefox, are not changed.
 
 ## Install
 

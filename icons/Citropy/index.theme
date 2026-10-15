@@ -1,8 +1,8 @@
 [Icon Theme]
 Name=Citropy
-Comment=Folders, file types and devices drawn in one smooth style, Breeze Dark for the rest
+Comment=Folders, file types, devices and menu icons drawn in one smooth style, Breeze Dark for the rest
 Inherits=breeze-dark
-Directories=places,mimetypes,devices
+Directories=places,mimetypes,devices,actions,categories,apps
 
 [places]
 Size=64
@@ -23,4 +23,25 @@ Size=64
 MinSize=8
 MaxSize=512
 Context=Devices
+Type=Scalable
+
+[actions]
+Size=24
+MinSize=8
+MaxSize=512
+Context=Actions
+Type=Scalable
+
+[categories]
+Size=24
+MinSize=8
+MaxSize=512
+Context=Categories
+Type=Scalable
+
+[apps]
+Size=64
+MinSize=8
+MaxSize=512
+Context=Applications
 Type=Scalable
