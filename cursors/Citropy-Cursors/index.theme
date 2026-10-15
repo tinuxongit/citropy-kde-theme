@@ -1,0 +1,4 @@
+[Icon Theme]
+Name=Citropy Cursors
+Comment=Citropy arrow pointer, Breeze cursors for the rest
+Inherits=breeze_cursors
