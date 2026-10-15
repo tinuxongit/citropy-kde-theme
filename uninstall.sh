@@ -30,8 +30,8 @@ done < "$STATE_FILE"
 if [ -x "$ICON_CHANGER" ]; then "$ICON_CHANGER" "$icon_theme"; fi
 if command -v plasma-apply-cursortheme >/dev/null 2>&1; then plasma-apply-cursortheme "$cursor_theme"; fi
 
-rm -rf "$DATA_DIR/icons/$THEME_NAME" "$DATA_DIR/icons/$CURSOR_NAME" "$DATA_DIR/fonts/CitropySans" "$DATA_DIR/wallpapers/$THEME_NAME"
+rm -rf "$DATA_DIR/icons/$THEME_NAME" "$DATA_DIR/icons/$CURSOR_NAME" "$DATA_DIR/fonts/CitropySans"
 fc-cache -f "$DATA_DIR/fonts"
 rm -rf "$STATE_DIR"
 
-printf 'Removed. The wallpaper, if you applied it, stays until you pick another one.\n'
+printf 'Removed.\n'

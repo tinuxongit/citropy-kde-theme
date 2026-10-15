@@ -1,6 +1,6 @@
 # Citropy KDE theme
 
-A look for KDE Plasma 6 based on the Citropy app. It changes the interface font, the icons, the pointer and the wallpaper. Colors, window frames and widget style stay as they are.
+A look for KDE Plasma 6 based on the Citropy app. It changes the interface font, the icons and the pointer. Wallpaper, colors, window frames and widget style stay as they are.
 
 ![Icons](previews/icons.png)
 
@@ -11,7 +11,6 @@ A look for KDE Plasma 6 based on the Citropy app. It changes the interface font,
 | `fonts/` | Citropy Sans, used for the interface, menus, toolbars and window titles. |
 | `icons/Citropy` | Icon theme. Redraws folders, 520 file types, 60 device icons, the Application Launcher category, power and search icons, and the Dolphin, System Settings and Konsole app icons. Everything else falls back to Breeze Dark. |
 | `cursors/Citropy-Cursors` | Cursor theme. The default arrow is Citropy, other pointers fall back to Breeze. |
-| `wallpapers/citropy.png` | 2560x1440 wallpaper with the Citropy mark. |
 
 File icons follow one layout. A colored page carries a symbol, and a label strip at the bottom shows the extension (ZIP, PDF, PNG, JSON). Colors group by family, for example blue for archives and documents, purple for images and video, green for spreadsheets.
 
@@ -27,7 +26,7 @@ cd citropy-kde-theme
 ./install.sh
 ```
 
-Add `--wallpaper` to also set the wallpaper. Log out and in afterwards so running apps pick up the font and icons.
+Log out and in afterwards so running apps pick up the font and icons.
 
 The installer saves your previous font, icon theme and cursor theme to `~/.config/citropy-kde-theme/previous.conf` before changing them.
 
@@ -37,10 +36,9 @@ The installer saves your previous font, icon theme and cursor theme to `~/.confi
 ./uninstall.sh
 ```
 
-This restores the saved settings and removes everything the installer copied. If you applied the wallpaper, it stays until you choose another one.
+This restores the saved settings and removes everything the installer copied.
 
 ## Licenses
 
 - Icons, cursor, scripts: MIT, see `LICENSE`.
 - Citropy Sans is a modified version of Google Sans Flex under the SIL Open Font License 1.1, see `fonts/CitropySans-OFL.txt`.
-- The Citropy mark in the wallpaper belongs to the Citropy project.

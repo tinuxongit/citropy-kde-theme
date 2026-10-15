@@ -15,14 +15,6 @@ STATE_DIR="$CONFIG_DIR/citropy-kde-theme"
 STATE_FILE="$STATE_DIR/previous.conf"
 ICON_CHANGER=/usr/lib/plasma-changeicons
 
-apply_wallpaper=0
-for argument in "$@"; do
-  case "$argument" in
-    --wallpaper) apply_wallpaper=1 ;;
-    *) printf 'unknown option: %s\nusage: install.sh [--wallpaper]\n' "$argument" >&2; exit 2 ;;
-  esac
-done
-
 for tool in kreadconfig6 kwriteconfig6 fc-cache; do
   command -v "$tool" >/dev/null 2>&1 || { printf 'missing required tool: %s\n' "$tool" >&2; exit 1; }
 done
@@ -50,13 +42,12 @@ if [ ! -f "$STATE_FILE" ]; then
   done > "$STATE_FILE"
 fi
 
-mkdir -p "$DATA_DIR/icons" "$DATA_DIR/fonts" "$DATA_DIR/wallpapers/$THEME_NAME"
+mkdir -p "$DATA_DIR/icons" "$DATA_DIR/fonts"
 rm -rf "$DATA_DIR/icons/$THEME_NAME" "$DATA_DIR/icons/$CURSOR_NAME" "$DATA_DIR/fonts/CitropySans"
 cp -r "$SOURCE_DIR/icons/$THEME_NAME" "$DATA_DIR/icons/$THEME_NAME"
 cp -r "$SOURCE_DIR/cursors/$CURSOR_NAME" "$DATA_DIR/icons/$CURSOR_NAME"
 mkdir -p "$DATA_DIR/fonts/CitropySans"
 cp "$SOURCE_DIR/fonts/CitropySans.ttf" "$SOURCE_DIR/fonts/CitropySans-OFL.txt" "$DATA_DIR/fonts/CitropySans/"
-cp "$SOURCE_DIR/wallpapers/citropy.png" "$DATA_DIR/wallpapers/$THEME_NAME/citropy.png"
 fc-cache -f "$DATA_DIR/fonts"
 
 settings_table | while IFS='|' read -r file group key value; do
@@ -65,6 +56,5 @@ done
 
 if [ -x "$ICON_CHANGER" ]; then "$ICON_CHANGER" "$THEME_NAME"; fi
 if command -v plasma-apply-cursortheme >/dev/null 2>&1; then plasma-apply-cursortheme "$CURSOR_NAME"; fi
-if [ "$apply_wallpaper" -eq 1 ]; then plasma-apply-wallpaperimage "$DATA_DIR/wallpapers/$THEME_NAME/citropy.png"; fi
 
 printf 'Installed. Log out and in so every running app picks up the font and icons.\n'
